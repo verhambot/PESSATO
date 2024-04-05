@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <div class="navigator">
+        <a href="/"><button class="back">back</button></a>
+        <div class="logo">PESSATO</div>
+    </div>
+</head>
+<link rel="stylesheet" href="../static/css/register.css">
+<body>
+    <form method="POST" class="reg">
+        <label for="srn" class="srn"><input id="srn" name="srn" type="text" placeholder="SRN" pattern="PES\d{1}[a-zA-Z]{2}\d{2}[a-zA-Z]{2}\d{3}"></label>
+        <label for="phone">
+            <div class="phone">
+                <select class="dropbtn" name="pcode">
+                    {% for o in data %}
+                    <option value="{{ o.code }}">{{ o.code }}</option>
+                    {% endfor %}
+                </select>
+                <input name="phone" id="phone" class="phonein" type="text" placeholder="Phone">
+            </div></label>
+            <label for="email"><input id="email" name="email" type="email" placeholder="Email" autocomplete="email"></label>
+        <button id="submit" type="submit">submit</button>
+    </form>
+</body>
+</html>

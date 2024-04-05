@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #FF7597;
+    --secondary: #FF0266;
+}
+
+body {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    padding: 0 20px;
+    background-color: black;
+    color: white;
+    font-family: mc;
+    margin:0;
+}
+
+.container {
+    display:flex;
+    justify-content: center;
+    margin:1.5em;
+    align-items: center;
+    flex-direction: column;
+}
+
+input {
+    margin:1.5vh;
+    height: fit-content;
+    border:none;
+    border-radius:4px;
+    background-color: rgb(128, 128, 128,2.2);
+    color:black;
+    padding: 5px;
+}
+
+button {
+    width:fit-content;
+    border:none;
+    border-radius: 4px;
+    background-color:black;
+    color: var(--primary);
+    font-family: 'mc';
+    height: fit-content;
+    padding: .6em;
+    font-size: 1em;
+    margin: .5em;
+    border: var(--secondary) 2px solid;
+}
+
+button:active {
+    background-color: var(--primary);
+    color:black;
+    transition: .1s;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.money_container {
+    display: grid;
+    grid-template-columns: 3 1fr;
+}
+
+.requests {
+    border: var(--secondary) 2px solid;
+    border-radius: 16px;
+    width: fit-content;
+    background-color: rgb(255, 255, 255);
+    color:black;
+}
+
+
+::placeholder {
+    color: rgb(0, 0, 0, .6);
+    font-family: 'mc';
+    text-align: center;
+}
+
+
+@font-face {
+    font-family: 'mc';
+    src: url(../assets/fonts/Minecrafter.Reg.ttf);
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe</title>
+</head>
+<link rel="stylesheet" href="../static/css/cafeOrders.css">
+<body>
+    <h1>PESSATO</h1>
+    {% if success %}
+        {% if srns %}
+            {% for srn in srns %}
+            {% if allOrders!=0 %}
+            <p class="srn">{{srn}}</p>
+
+                        <table>
+                            <tr>
+                                <td>Order no</td>
+                                <td>Food</td>
+                                <td>Status</td>
+                                <td>Quantity</td>
+                                <td></td>
+                            </tr>
+                            {% for o in allOrders %}
+                            {% if o.srn==srn and o.status=='paid' or o.status=='ready to collect' %}
+                            <tr>
+                                <td>{{o.orderno}}</td>
+                                <td>{{o.food}}</td>
+                                <td>{{o.status}}</td>
+                                <td>{{o.quantity}}</td>
+                                <td><form action="/changeStatus" method="post">
+                                    <input type="hidden" value="{{o.orderno}}" name="orderno">
+                                    <input type="hidden" value="{{o.food}}" name="food">
+                                    {% if o.status=='paid' %}
+                                        <button name="submit_status" value="ready">Ready</button>
+                                    {% endif %}
+                                    <button name="submit_status" value="collected">Collected</button>
+                                </form></td>
+                            </tr>
+                            {% endif %}
+                            {% endfor %}
+                        </table>
+
+            {% endif %}
+            {% endfor %}
+        {% else %}
+            No orders
+        {% endif %}
+    {% else %}
+        <form method="post">
+            <label for="uname">
+                <div class="login">
+                <input type="text" id="uname" class="uname" name="uname" placeholder="username">
+            </label>
+            <label for="password">
+                <input type="password" id="password" class="password" name="password" placeholder="password">
+            </label>
+            <button value="submit" name="login">Submit</button>
+        </form>
+    {% endif %}
+</body>
+</html>

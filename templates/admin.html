@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<link rel="stylesheet" href="../static/css/admin.css">
+<body>
+    <h1>PESSATO</h1>
+    <div class="container">
+    {% if success %}
+    <h1>ADMIN</h1>
+    <div class="money_container">
+    {% if reqlist %}
+        <h3>Money Requests</h3>
+        <form method="post" action="/admin">
+            {% for o in reqlist %}
+            <div class="requests">
+                <p>
+                    <p><input type="hidden" value="{{o.srn}}" name="srn">{{o.srn}}</p>
+                    <p><input type="hidden" value="{{o.amt}}" name="amt">{{o.amt}}</p>
+                </p>
+                <button value="add" name="submit_req">Confirm</button>
+                <button value="deny" name="submit_req">Deny</button>
+            </div>
+            {% endfor %}
+        </form>
+    {% else %}
+        <p>No Money Requests</p>
+    </div>
+    {% endif %}
+    {% else %}
+        <form method="post">
+            <label for="uname">
+                <div class="login">
+                <input type="text" id="uname" class="uname" name="uname" placeholder="username">
+            </label>
+            <label for="password">
+                <input type="password" id="password" class="password" name="password" placeholder="password">
+            </label>
+            <button value="submit" name="login">Submit</button>
+        </form>
+    {% endif %}
+    </div>
+</body>
+</html>

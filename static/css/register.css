@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #FF7597;
+    --secondary: #FF0266;
+}
+
+body {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    padding: 0 20px;
+    background-color: black;
+    color: white;
+    font-family: mc;
+    margin:0;
+}
+
+.navigator {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 10vw;
+}
+
+.back {
+    margin-right:4em;
+}
+
+.logo {
+    font-size: large;
+}
+
+.reg {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255,.15);
+    padding: 4vw;
+    border-radius: 16px;
+    width:70vw;
+    font-size: 4vw;
+    justify-content: center;
+}
+
+input, select{
+    margin:1.5vh;
+    height: fit-content;
+    border:none;
+    border-radius:4px;
+    background-color: rgb(128, 128, 128,2.2);
+    color:black;
+    padding: 5px;
+    font-size: 4vw;
+    width: 12em;
+}
+
+
+button {
+    width:fit-content;
+    border:none;
+    border-radius: 4px;
+    background-color:black;
+    color: var(--primary);
+    font-family: 'mc';
+    height: fit-content;
+    padding: .6em;
+    font-size: 1em;
+    margin: .5em;
+    border: var(--secondary) 2px solid;
+}
+
+.phone {
+    display:flex;
+}
+
+select {
+    width: 3.4em;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left:2em;
+}
+
+.phonein {
+    width:7.4em;
+}
+
+::placeholder {
+    color: rgb(0, 0, 0, .6);
+    font-family: 'mc';
+    text-align: center;
+}
+  
+
+@font-face {
+    font-family: 'mc';
+    src: url(../assets/fonts/Minecrafter.Reg.ttf);
+}
