@@ -4,7 +4,7 @@ A food-ordering website for the PESU Cafeteria.
 
 <br>
 
-# Installation
+## Installation :
 
 - Dependencies : `pip install flask mysql-connector-python twilio python-dotenv Flask-Session fpdf`
 - SQL :
@@ -12,10 +12,23 @@ A food-ordering website for the PESU Cafeteria.
     - Import sqldump : `mysql -u <USERNAME> -p pessato < pessato_data.sql`
 - Python :
     - Replace all "<...>" with appropriate values.
+    - Create a `.env` file with required tokens.
 
 <br>
 
-#### In Collaboration With :
+## Run :
+
+- `python app.py`
+
+<br>
+
+## Demo :
+
+https://drive.google.com/file/d/1c0YHRR8-DPHBlORmtFmGpq7AggRYXKlW/view?usp=sharing
+
+<br>
+
+## Collaboration :
 - Amogh E M
 - Arnav Rao
 - Arjun MS
