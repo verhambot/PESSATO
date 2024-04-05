@@ -2,6 +2,7 @@
 
 A food-ordering website for the PESU Cafeteria.
 
+<br>
 
 # Installation
 
@@ -11,3 +12,10 @@ A food-ordering website for the PESU Cafeteria.
     - Import sqldump : `mysql -u <USERNAME> -p pessato < pessato_data.sql`
 - Python :
     - Replace all "<...>" with appropriate values.
+
+<br>
+
+#### In Collaboration With :
+- Amogh E M
+- Arnav Rao
+- Arjun MS
